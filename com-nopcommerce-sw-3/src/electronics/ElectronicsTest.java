@@ -145,7 +145,7 @@ public class ElectronicsTest extends BaseTest {
         fieldLastName.sendKeys("Software Testing");
 
         WebElement emailField = driver.findElement(By.id("Email"));
-        emailField.sendKeys("m4mitzcodebuster11111@gmail.com");
+        emailField.sendKeys("m4mitzcodebuster1111@gmail.com");
 
         WebElement passwordField = driver.findElement(By.id("Password"));
         passwordField.sendKeys("Codebuster");
@@ -170,7 +170,7 @@ public class ElectronicsTest extends BaseTest {
         loginLink.click();
 
         WebElement emailLoginField = driver.findElement(By.id("Email"));
-        emailLoginField.sendKeys("m4mitzcodebuster11111@gmail.com");
+        emailLoginField.sendKeys("m4mitzcodebuster1111@gmail.com");
 
         WebElement passwordLoginField = driver.findElement(By.id("Password"));
         passwordLoginField.sendKeys("Codebuster");
