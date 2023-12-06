@@ -220,7 +220,6 @@ public class TestSuite extends BaseTest {
         Thread.sleep(1000);
 
         verify1("//div[@class='topic-block']/div[1]/h2","Welcome to our store");
-
     }
 
     @After
