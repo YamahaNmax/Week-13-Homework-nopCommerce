@@ -74,7 +74,7 @@ public class ElectronicsTest extends BaseTest {
 
         selectMenu("//div[@data-productid='20']/div[2]/h2/a");
 
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         verify("product-name", "Nokia Lumia 1020");
 
@@ -94,7 +94,7 @@ public class ElectronicsTest extends BaseTest {
 
         Actions actions1 = new Actions(driver);
 
-        Thread.sleep(1000);
+        Thread.sleep(3000);
 
         WebElement shoppingCart=driver.findElement(By.xpath("//div[@class='header']/div[1]/div[2]/div[1]/ul[1]/li[4]"));
         WebElement goToCart=driver.findElement(By.xpath("//div[@class='header']/div[1]/div[2]/div[2]/div[1]/div[4]/button[1]"));
@@ -145,7 +145,7 @@ public class ElectronicsTest extends BaseTest {
         fieldLastName.sendKeys("Software Testing");
 
         WebElement emailField = driver.findElement(By.id("Email"));
-        emailField.sendKeys("m4mitzcodebuster1111@gmail.com");
+        emailField.sendKeys("m4mitzcodebuster11111@gmail.com");
 
         WebElement passwordField = driver.findElement(By.id("Password"));
         passwordField.sendKeys("Codebuster");
@@ -164,11 +164,13 @@ public class ElectronicsTest extends BaseTest {
 
         verify("page-title", "Shopping cart");
 
+        Thread.sleep(1000);
+
         WebElement loginLink = driver.findElement(By.className("ico-login"));
         loginLink.click();
 
         WebElement emailLoginField = driver.findElement(By.id("Email"));
-        emailLoginField.sendKeys("m4mitzcodebuster1111@gmail.com");
+        emailLoginField.sendKeys("m4mitzcodebuster11111@gmail.com");
 
         WebElement passwordLoginField = driver.findElement(By.id("Password"));
         passwordLoginField.sendKeys("Codebuster");
@@ -182,6 +184,41 @@ public class ElectronicsTest extends BaseTest {
 
         selectMenu("//div[@class='checkout-buttons']/button[1]");
 
+
+        WebElement sortByPosition3 = driver.findElement(By.xpath("//div[@class='edit-address']/div[5]/select"));
+        sortByPosition3.click();
+
+        Select select3 = new Select(sortByPosition3);
+        select3.selectByVisibleText("United Kingdom");
+
+        fillForm("//div[@class='edit-address']/div[6]/select", "");
+
+        fillForm("//div[@class='edit-address']/div[7]/input[1]", "London");
+
+        fillForm("//div[@class='edit-address']/div[8]/input[1]", "3 Stn stat");
+
+        fillForm("//div[@class='edit-address']/div[9]/input[1]", "Harrow");
+
+        fillForm("//div[@class='edit-address']/div[10]/input[1]", "HA7 4PD");
+
+        fillForm("//div[@class='edit-address']/div[11]/input[1]", "1234567890");
+
+        fillForm("//div[@class='edit-address']/div[12]/input[1]", "223344");
+
+        selectMenu("//div[@id='billing-buttons-container']/button[4]");
+
+        Thread.sleep(5000);
+
+        selectMenu("//div[@id='checkout-shipping-method-load']/div[1]/div[1]/ul[1]/li[2]/div[1]/input[1]");
+
+        selectMenu("//div[@id='shipping-method-buttons-container']/button[1]");
+        ;
+
+        Thread.sleep(1000);
+
+        selectMenu("//div[@class='section payment-method']/ul[1]/li[2]/div[1]/div[2]/input");
+
+        selectMenu("//div[@id='payment-method-buttons-container']/button[1]");
 
         Thread.sleep(1000);
 
@@ -227,7 +264,7 @@ public class ElectronicsTest extends BaseTest {
 
         verify1("//div[@class='topic-block']/div[1]/h2","Welcome to our store");
 
-        selectMenu("//button[@class='button-1 login-button']");
+        selectMenu("//div[@class='header-links-wrapper']/div[1]/ul[1]/li[2]/a[1]");
 
         String url1 = driver.getCurrentUrl();
         Assert.assertEquals(url1,"https://demo.nopcommerce.com/");
@@ -236,6 +273,6 @@ public class ElectronicsTest extends BaseTest {
 
     @After
     public void endTest() {
-        //closeBrowser();
+        closeBrowser();
     }
 }
